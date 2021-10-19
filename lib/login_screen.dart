@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:loginscreen/Time_Line.dart';
 import 'package:loginscreen/timelines.dart';
 
 import 'SignUp.dart';

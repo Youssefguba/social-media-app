@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:loginscreen/timelines.dart';
 
-import 'Time_Line.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({Key? key}) : super(key: key);
