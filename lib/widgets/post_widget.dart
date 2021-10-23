@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:loginscreen/models/post_model.dart';
+import 'package:loginscreen/widgets/reactions_container.dart';
 
 class PostWidget extends StatefulWidget {
   final PostModel postModel;
@@ -38,37 +39,11 @@ class _PostWidgetState extends State<PostWidget> {
           ),
           SizedBox(height: 8),
           Divider(),
-          Container(
-            color: Colors.grey.shade100,
-            child: Padding(
-              padding: const EdgeInsets.all(4.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  TextButton.icon(
-                    label: Text('Like'),
-                    icon: Icon(Icons.thumb_up),
-                    onPressed: () {},
-                  ),
-
-                  TextButton.icon(
-                    label: Text('Comment'),
-                    icon: Icon(Icons.comment_rounded),
-                    onPressed: () {},
-                  ),
-
-                  TextButton.icon(
-                    label: Text('Share'),
-                    icon: Icon(Icons.share),
-                    onPressed: () {},
-                  ),
-
-                ],
-              ),
-            ),
-          ),
+          ReactionsWidget()
         ],
       ),
     );
   }
 }
+
+

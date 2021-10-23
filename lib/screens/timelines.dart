@@ -1,9 +1,10 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:loginscreen/helpers/network.dart';
 import 'package:loginscreen/widgets/post_widget.dart';
 
-import 'models/post_model.dart';
+import '../models/post_model.dart';
 
 class Posts extends StatefulWidget {
   final String username;
@@ -39,10 +40,20 @@ class _PostsState extends State<Posts> {
       totalLikes: 13,
       username: 'Ahmed',
     ),
+    PostModel(
+      text: 'Hello World, I am Ahmed',
+      image:
+          'https://media.istockphoto.com/photos/smiling-man-outdoors-in-the-city-picture-id1179420343?k=20&m=1179420343&s=612x612&w=0&h=G2UGMVSzAXGAQs3pFZpvWlHNRAzwPIWIVtSOxZHsEuc=',
+      date: '20 mins ago',
+      totalLikes: 13,
+      username: 'Ahmed',
+    ),
   ];
 
   @override
   Widget build(BuildContext context) {
+    getHttp();
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
@@ -51,7 +62,7 @@ class _PostsState extends State<Posts> {
           ),
           body: ListView.builder(
               itemCount: listOfPosts.length,
-              itemBuilder: (context, index) {
+              itemBuilder: (_, index) {
             return PostWidget(postModel: listOfPosts[index]);
           })),
 
