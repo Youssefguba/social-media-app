@@ -47,8 +47,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   //Email Address
                   TextFormField(
-                    validator: (email) =>
-                        email!.length < 6 ? 'Name not valid' : null,
+                    validator: (email) => email!.isEmpty ? 'Name not valid' : null,
                     controller: usernameController,
                     keyboardType: TextInputType.emailAddress,
                     onFieldSubmitted: (value) {
@@ -71,8 +70,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     onFieldSubmitted: (value) {
                       print(value);
                     },
-                    validator: (text) =>
-                        text!.isEmpty ? 'Password Cannot be Empty' : null,
+                    // validator: (text) =>
+                    //     text!.isEmpty ? 'Password Cannot be Empty' : null,
                     decoration: InputDecoration(
                       labelText: "Password",
                       border: OutlineInputBorder(),

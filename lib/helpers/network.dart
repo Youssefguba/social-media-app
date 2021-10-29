@@ -1,11 +1,12 @@
 import 'package:dio/dio.dart';
 
-
-void getHttp() async {
+Future<List<dynamic>?> getPosts() async {
   try {
-    var response = await Dio().get("https://jsonplaceholder.typicode.com/posts");
-    print(response);
+    Response response =
+        await Dio().get("https://jsonplaceholder.typicode.com/posts");
+    return response.data;
   } catch (e) {
-    print(e);
+    print('error $e');
+    return null;
   }
 }
